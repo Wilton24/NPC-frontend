@@ -1,16 +1,13 @@
 import './App.css'
+import Body from './components/Body';
 import Header from './components/Header'
-import Hero from './components/Hero'
-
-
 
 function App() {
-
 
   return (
     <>
       <Header />
-      <Hero />
+      <Body />
     </>
   )
 }

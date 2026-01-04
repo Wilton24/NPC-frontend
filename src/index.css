@@ -31,6 +31,17 @@ header .nav-list a {
   font-weight: bold;
 }
 
+/* Body */
+.body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 1rem;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+
 /* LOGO */
 .logo {
   display: flex;
@@ -54,24 +65,18 @@ header .nav-list a {
 
 /* Hero Section */
 .hero {
-  height: 80vh;
-  /* Takes up 80% of the screen height */
+  height: 50vh;
   display: flex;
   align-items: center;
-  /* Vertical center */
   justify-content: center;
-  /* Horizontal center */
   text-align: center;
   position: relative;
   overflow: hidden;
   color: white;
-
-  /* Use your image here */
   background: url('../assets/npc-players.jpg') no-repeat center center;
   background-size: cover;
 }
 
-/* The Overlay: Darkens the image so text pops */
 .hero::before {
   content: "";
   position: absolute;
@@ -88,6 +93,7 @@ header .nav-list a {
   z-index: 2;
   max-width: 800px;
   padding: 0 20px;
+  top: -150px;
 }
 
 .hero-content h1 {
@@ -99,11 +105,12 @@ header .nav-list a {
 
 .hero-content p {
   font-size: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   opacity: 0.9;
 }
 
 .cta-button {
+  position: relative;
   padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: bold;

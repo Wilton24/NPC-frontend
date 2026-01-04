@@ -2,8 +2,15 @@ import HeroImg from '../assets/npc-players.jpg'
 
 export default function Hero() {
     return (
-        <div className="hero">
-            <img src={HeroImg} alt="Hero Image" />
-        </div>
+        <section
+            className="hero"
+            style={{ backgroundImage: `url(${HeroImg})` }}
+        >
+            <div className="hero-content">
+                <h1>SMASH & DINK</h1>
+                <p>Where the blame never stops</p>
+                {/* <button className="cta-btn">Join Now</button> */}
+            </div>
+        </section>
     )
 }
