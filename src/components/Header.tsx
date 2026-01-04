@@ -5,7 +5,6 @@ export default function Header() {
         <header className="header">
             <div className="logo">
                 <img src={pickleBallLogo} alt="Pickleball Logo" />
-                {/* <img src="" alt="" /> */}
             </div>
             <nav>
                 <ul className="nav-list">
