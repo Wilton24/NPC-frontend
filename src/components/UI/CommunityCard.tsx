@@ -1,9 +1,14 @@
-export default function CommunityCard() {
+export default function CommunityCard({ icon, number, text }:
+    {
+        icon: React.ReactNode;
+        number?: string;
+        text?: string;
+    }) {
     return (
         <div className="community-card">
-            <p>icon</p>
-            <p>500+</p>
-            <p>Active Members</p>
+            <p>{icon}</p>
+            <p>{number}</p>
+            <p>{text}</p>
         </div>
     )
 }
