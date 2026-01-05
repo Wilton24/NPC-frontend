@@ -3,9 +3,9 @@ export default function HeaderLinks({ title, dropdown = [] }: { title: string, d
         <li>
             <a href="#about-us">{title}</a>
             <ul className="dropdown">
-                {dropdown.map((text: string) => {
+                {dropdown.map((text: string, id: number) => {
                     return (
-                        <li><a href={text}>{text}</a></li>
+                        <li key={id}><a href={text}>{text}</a></li>
                     )
                 })}
             </ul>

@@ -4,6 +4,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: #050053;
+  margin-bottom: 1rem;
   color: white;
   padding: 1rem 5%;
   position: sticky;

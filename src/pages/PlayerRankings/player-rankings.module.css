@@ -1,0 +1,65 @@
+.wrapper {
+    min-height: calc(100vh - 80px);
+    /* adjust if header height differs */
+    display: flex;
+    justify-content: center;
+    background-color: #f5f7ff;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #050053;
+}
+
+/* TABLE */
+.rankingsTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.rankingsTable thead {
+    background-color: #050053;
+    color: white;
+}
+
+.rankingsTable th,
+.rankingsTable td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.rankingsTable th {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.rankingsTable tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.rankingsTable tbody tr:nth-child(even) {
+    background-color: #f4f6ff;
+}
+
+.rankingsTable tbody tr:hover {
+    background-color: #e6eaff;
+}
+
+/* Rank column emphasis */
+.rankingsTable td:first-child {
+    font-weight: bold;
+    color: #050053;
+}
