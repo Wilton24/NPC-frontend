@@ -4,7 +4,7 @@ import { Calendar } from 'lucide-react';
 import { MapPin } from 'lucide-react';
 import { Trophy } from 'lucide-react';
 import npcImg2 from '../assets/images/npc_img2.jpg'
-// import npcImg4 from '../assets/images/npc_img4.jpg'
+import npcImg4 from '../assets/images/npc_img4.jpg'
 import PlayersImage from "./UI/PlayersImage";
 
 export default function About() {
@@ -31,9 +31,16 @@ export default function About() {
 
 
             <div className="right-section">
-                {/* <img src={npcImg2} alt="" />
-                <img src={npcImg4} alt="" /> */}
+                <div className="right-section-text">
+                    <h2>All Levels Welcome</h2>
+                    <p>From beginners to advanced players, everyone finds their game here.</p>
+                </div>
                 <PlayersImage imgSrc={npcImg2} imgAlt="Pickleball players" />
+                <PlayersImage imgSrc={npcImg4} imgAlt="Pickleball players" />
+                <div className="right-section-text">
+                    <h2>All Levels Welcome</h2>
+                    <p>From beginners to advanced players, everyone finds their game here.</p>
+                </div>
             </div>
         </section>
     )

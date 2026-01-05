@@ -1,4 +1,6 @@
-import pickleBallLogo from '../assets/npc-logo-transparent.png'
+import pickleBallLogo from '../assets/npc-logo-transparent.png';
+import HeaderLinks from './UI/HeaderLinks';
+
 
 export default function Header() {
     return (
@@ -8,12 +10,11 @@ export default function Header() {
             </div>
             <nav>
                 <ul className="nav-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#membership">Membership</a></li>
-                    <li><a href="#courts">Courts</a></li>
-                    <li><a href="#players">Players</a></li>
-                    <li><a href="#tournaments">Tournaments</a></li>
+                    <HeaderLinks title="About Us" dropdown={["Our Team", "History"]} />
+                    <HeaderLinks title="Membership" dropdown={["Pricing", "Benefits"]} />
+                    <HeaderLinks title="Courts" dropdown={["Availability", "Book Now"]} />
+                    <HeaderLinks title="Players" dropdown={["Players Home", "Rankings", "Player Profiles"]} />
+                    <HeaderLinks title="Tournaments" dropdown={["Upcoming", "Results"]} />
                 </ul>
             </nav>
         </header>
