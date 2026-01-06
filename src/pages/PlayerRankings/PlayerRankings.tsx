@@ -1,6 +1,39 @@
-import styles from "./player-rankings.module.css"
+import { useEffect, useState } from "react";
+import styles from "./player-rankings.module.css";
+import { fetchApi } from "../../api/util";
+
+interface Player {
+    id: number;
+    image: string;
+    name: string;
+    age: number;
+    points: number;
+}
+
 
 export default function PlayerRankings() {
+    const [players, setPlayers] = useState<Player[]>([]);
+    const [loading, setLoading] = useState(true);
+
+
+
+    useEffect(() => {
+        const getPlayers = async () => {
+            try {
+                const data = await fetchApi<Player[]>("http://localhost:3001/api/players");
+                setPlayers(data);
+            } catch (error) {
+                console.error("Failed to fetch players:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        getPlayers();
+    }, []);
+
+    if (loading) return <p>Loading players...</p>;
+
     return (
 
         <div className={styles.wrapper}>
@@ -16,15 +49,22 @@ export default function PlayerRankings() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>sdfasdf</td>
-                            <td>25</td>
-                            <td>4124</td>
-                        </tr>
+                        {players.map((player, index) => (
+                            <tr key={player.id}>
+                                <td>{index + 1}</td>
+                                <td>
+                                    <img src={player.image} className={styles.playerImage} alt="Player Profile" />
+                                    {player.name}
+                                </td>
+                                <td>{player.age}</td>
+                                <td>{player.points}</td>
+                            </tr>
+                        ))}
                     </tbody>
 
                 </table>
+                <h1>Sample king</h1>
+                <img src="https://us-east-1.console.aws.amazon.com/s3/object/npc-player-images?region=us-east-1&prefix=playerImg4.jpg" alt="" />
             </section>
         </div>
     )
