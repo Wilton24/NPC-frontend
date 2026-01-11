@@ -52,7 +52,7 @@ export default function PlayerRankings() {
                         {players.map((player, index) => (
                             <tr key={player.id}>
                                 <td>{index + 1}</td>
-                                <td>
+                                <td className={styles.playerCell}>
                                     <img src={player.image} className={styles.playerImage} alt="Player Profile" />
                                     {player.name}
                                 </td>

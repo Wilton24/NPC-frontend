@@ -1,4 +1,4 @@
-import { NavLink } from "react-router"
+import { NavLink } from "react-router";
 
 
 export default function HeaderLinks({ title, dropdown = [] }: { title: string, dropdown: string[] }) {
