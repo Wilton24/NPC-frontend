@@ -1,12 +1,14 @@
 import pickleBallLogo from '../assets/npc-logo-transparent.png';
 import HeaderLinks from './UI/HeaderLinks';
-
+import { NavLink } from "react-router";
 
 export default function Header() {
     return (
         <header className="header">
             <div className="logo">
-                <img src={pickleBallLogo} alt="Pickleball Logo" />
+                <NavLink to="/">
+                    <img src={pickleBallLogo} alt="Pickleball Logo" />
+                </NavLink>
             </div>
             <nav>
                 <ul className="nav-list">

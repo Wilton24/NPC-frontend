@@ -9,7 +9,6 @@ export default function HeaderLinks({ title, dropdown = [] }: { title: string, d
             <ul className="dropdown">
                 {dropdown.map((text: string, id: number) => {
                     return (
-                        // <NavLink to={dropdown} key={id}><a href={text}>{text}</a></NavLink>
                         <NavLink
                             key={id}
                             to={`/players/${text.toLowerCase().replace(/\s+/g, '-')}`}
