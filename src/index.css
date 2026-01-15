@@ -1,5 +1,5 @@
 /* HEADER */
-header {
+ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,10 +14,6 @@ header {
 
 header ul {
   list-style-type: none;
-}
-
-header .logo img {
-  height: 50px;
 }
 
 header .nav-list {
@@ -38,7 +34,7 @@ header .nav-list a {
 }
 
 /* Dropdown menu */
-header .dropdown {
+.dropdown {
   display: none;
   position: absolute;
   top: 100%;
@@ -64,7 +60,7 @@ header .dropdown li a:hover {
   background-color: #1a1a8f;
 }
 
-
+*/
 
 /* Body */
 .body {

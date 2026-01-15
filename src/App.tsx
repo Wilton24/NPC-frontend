@@ -1,6 +1,4 @@
 import './App.css'
-// import Body from './components/Body';
-// import Header from './components/Header';
 import { createBrowserRouter, RouterProvider } from "react-router";
 import RootLayout from './pages/Root';
 import PlayerRankings from './pages/PlayerRankings/PlayerRankings';
@@ -31,10 +29,6 @@ const router = createBrowserRouter([
 function App() {
 
   return <RouterProvider router={router} />;
-  // <>
-  //   <Header />
-  //   <Body />
-  // </>
 
 
 }
