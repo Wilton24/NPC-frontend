@@ -1,3 +1,5 @@
+import styles from "./CommunityCar.module.css";
+
 export default function CommunityCard({ icon, number, text }:
     {
         icon: React.ReactNode;
@@ -5,7 +7,7 @@ export default function CommunityCard({ icon, number, text }:
         text?: string;
     }) {
     return (
-        <div className="community-card">
+        <div className={styles.communityCard}>
             <p>{icon}</p>
             <p>{number}</p>
             <p>{text}</p>

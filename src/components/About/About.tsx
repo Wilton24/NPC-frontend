@@ -1,6 +1,5 @@
 import CommunityCard from "../UI/CommunityCard";
 import { UsersRound, Calendar, MapPin, Trophy } from "lucide-react";
-// import npcImg2 from "../assets/images/npc_img2.jpg";
 import npcImg2 from "../../assets/images/npc_img2.jpg"
 import npcImg4 from "../../assets/images/npc_img4.jpg"
 import PlayersImage from "../UI/PlayersImage";
