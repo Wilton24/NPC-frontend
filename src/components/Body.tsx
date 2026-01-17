@@ -1,4 +1,4 @@
-import About from "./About"
+import About from "./About/About"
 import Hero from "./Hero/Hero"
 
 

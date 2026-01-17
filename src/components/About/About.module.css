@@ -1,0 +1,87 @@
+.aboutSection {
+    margin-top: 4rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: end;
+}
+
+.aboutSection>div {
+    flex: 1;
+    min-width: 0;
+}
+
+/* LEFT */
+.leftSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutDetails h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.aboutDetails p {
+    line-height: 1.6;
+}
+
+/* CARDS */
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* RIGHT */
+.rightSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.rightSectionText {
+    background-color: oklch(59.6% 0.145 163.225);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rightSectionText h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+/* Images */
+.rightSection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.rightSection img:hover {
+    transform: scale(1.03);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .aboutSection {
+        flex-direction: column;
+    }
+
+    .rightSection {
+        grid-template-columns: 1fr;
+    }
+}
