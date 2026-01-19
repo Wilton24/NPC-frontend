@@ -100,3 +100,8 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.playerName:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

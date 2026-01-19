@@ -1,0 +1,44 @@
+/* PlayerProfileModal.module.css */
+.dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles the background overlay */
+.dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}

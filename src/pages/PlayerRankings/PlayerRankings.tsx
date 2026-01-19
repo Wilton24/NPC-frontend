@@ -55,9 +55,12 @@ export default function PlayerRankings() {
                         {players.map((player, index) => (
                             <tr key={player.id}>
                                 <td>{index + 1}</td>
-                                <td className={styles.playerCell}>
+                                <td
+                                    className={styles.playerCell}
+                                    onClick={() => setIsModalOpen(true)}
+                                >
                                     <img src={player.image} className={styles.playerImage} alt="Player Profile" />
-                                    {player.name}
+                                    <p className={styles.playerName}>{player.name}</p>
                                 </td>
                                 <td>{player.age}</td>
                                 <td>{player.points}</td>
@@ -67,19 +70,12 @@ export default function PlayerRankings() {
 
                 </table>
                 <h1>Sample king</h1>
-                <button onClick={() => setIsModalOpen(true)}>
-                    Open Modal
-                </button>
                 <PlayerProfileModal
                     isOpen={isModalOpen}
                     onClose={() => setIsModalOpen(false)}
-                    title="User Settings"
-                >
-                    <p className="text-gray-600">
-                        This is a native HTML dialog. It handles focus trapping and
-                        background dimming automatically!
-                    </p>
-                </PlayerProfileModal>
+                    playerName="Sample King"
+                    stats={{ level: 99, rank: "Champion" }}
+                />
             </section>
         </div>
     )

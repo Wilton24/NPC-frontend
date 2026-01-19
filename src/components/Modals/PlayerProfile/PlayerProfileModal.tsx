@@ -1,13 +1,17 @@
 import { useEffect, useRef } from 'react';
+import styles from './PlayerProfileModal.module.css';
 
-interface ModalProps {
+interface PlayerProfileModalProps {
     isOpen: boolean;
     onClose: () => void;
-    title: string;
-    children: React.ReactNode;
+    playerName: string;
+    stats: {
+        level: number;
+        rank: string;
+    };
 }
 
-const PlayerProfileModal = ({ isOpen, onClose, title, children }: ModalProps) => {
+const PlayerProfileModal = ({ isOpen, onClose, playerName, stats }: PlayerProfileModalProps) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     useEffect(() => {
@@ -21,6 +25,7 @@ const PlayerProfileModal = ({ isOpen, onClose, title, children }: ModalProps) =>
         }
     }, [isOpen]);
 
+    // Close when clicking the backdrop
     const handleBackdropClick = (e: React.MouseEvent<HTMLDialogElement>) => {
         if (e.target === dialogRef.current) onClose();
     };
@@ -30,23 +35,22 @@ const PlayerProfileModal = ({ isOpen, onClose, title, children }: ModalProps) =>
             ref={dialogRef}
             onClose={onClose}
             onClick={handleBackdropClick}
-            className="rounded-lg p-0 backdrop:bg-black/50 backdrop:backdrop-blur-sm"
+            className={styles.dialog}
         >
-            <div className="w-[400px] p-6 bg-white flex flex-col gap-4">
-                <div className="flex justify-between items-center border-b pb-2">
-                    <h2 className="text-xl font-bold">{title}</h2>
-                    <button onClick={onClose} className="text-gray-500 hover:text-black">
-                        ✕
-                    </button>
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <h2>Player Profile</h2>
+                    <button className={styles.closeButton} onClick={onClose}>✕</button>
                 </div>
-                <div>{children}</div>
-                <div className="flex justify-end pt-2">
-                    <button
-                        onClick={onClose}
-                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                    >
-                        Close
-                    </button>
+
+                <div className={styles.content}>
+                    <p><strong>Name:</strong> {playerName}</p>
+                    <p><strong>Level:</strong> {stats.level}</p>
+                    <p><strong>Rank:</strong> {stats.rank}</p>
+                </div>
+
+                <div className={styles.footer}>
+                    <button onClick={onClose}>Done</button>
                 </div>
             </div>
         </dialog>
