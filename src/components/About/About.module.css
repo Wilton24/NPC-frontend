@@ -17,6 +17,10 @@
     flex-direction: column;
 }
 
+.aboutDetails {
+    padding: 0 1rem;
+}
+
 .aboutDetails h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -32,6 +36,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    padding: 0 1rem;
 }
 
 /* RIGHT */

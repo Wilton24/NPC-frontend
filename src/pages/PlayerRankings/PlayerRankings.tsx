@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./player-rankings.module.css";
 import { fetchApi } from "../../api/util";
+import PlayerProfileModal from "../../components/Modals/PlayerProfile/PlayerProfileModal";
+
 
 interface Player {
     id: number;
@@ -14,6 +16,7 @@ interface Player {
 export default function PlayerRankings() {
     const [players, setPlayers] = useState<Player[]>([]);
     const [loading, setLoading] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
 
@@ -64,7 +67,19 @@ export default function PlayerRankings() {
 
                 </table>
                 <h1>Sample king</h1>
-                <img src="https://us-east-1.console.aws.amazon.com/s3/object/npc-player-images?region=us-east-1&prefix=playerImg4.jpg" alt="" />
+                <button onClick={() => setIsModalOpen(true)}>
+                    Open Modal
+                </button>
+                <PlayerProfileModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    title="User Settings"
+                >
+                    <p className="text-gray-600">
+                        This is a native HTML dialog. It handles focus trapping and
+                        background dimming automatically!
+                    </p>
+                </PlayerProfileModal>
             </section>
         </div>
     )
