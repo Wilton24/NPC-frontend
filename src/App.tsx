@@ -5,6 +5,7 @@ import PlayerRankings from './pages/PlayerRankings/PlayerRankings';
 import PlayersHome from './pages/PlayerRankings/PlayersHome';
 import { playerLoader } from './loaders/playerLoader';
 import Player from './pages/Player/Player';
+import PlayerError from './pages/Player/PlayerError';
 
 
 const router = createBrowserRouter([
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
       {
         path: "rankings/:id",
         loader: playerLoader,
-        Component: Player
+        Component: Player,
+        errorElement: <PlayerError />
       }
     ]
   }

@@ -58,7 +58,7 @@ export default function PlayerRankings() {
                                 <td className={styles.playerCell}>
                                     <img src={player.image} className={styles.playerImage} alt="Player Profile" />
                                     <p
-                                        onClick={() => navigate(`/players/rankings/${player.name}`)}
+                                        onClick={() => navigate(`/players/rankings/${player.id}`)}
                                         className={styles.playerName}>{player.name}</p>
                                 </td>
                                 <td>{player.age}</td>
