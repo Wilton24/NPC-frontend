@@ -104,4 +104,5 @@
 .playerName:hover {
     cursor: pointer;
     text-decoration: underline;
+    color: #001c3d;
 }

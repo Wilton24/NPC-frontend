@@ -1,7 +1,12 @@
+import type { LoaderFunctionArgs } from "react-router";
 
+export async function playerLoader({ params }: LoaderFunctionArgs) {
+    const playerId = params.id;
 
-export const playerLoader = async () => {
-    return (
-        <h1>Hello</h1>
-    )
+    const res = await fetch(`http://localhost:3001/players/${playerId}`);
+    if (!res.ok) {
+        throw new Response("Player not found", { status: 404 });
+    }
+
+    return res.json();
 }

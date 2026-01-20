@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./player-rankings.module.css";
 import { fetchApi } from "../../api/util";
-import PlayerProfileModal from "../../components/Modals/PlayerProfile/PlayerProfileModal";
+// import PlayerProfileModal from "../../components/Modals/PlayerProfile/PlayerProfileModal";
+import { useNavigate } from "react-router";
+
 
 
 interface Player {
@@ -16,9 +18,7 @@ interface Player {
 export default function PlayerRankings() {
     const [players, setPlayers] = useState<Player[]>([]);
     const [loading, setLoading] = useState(true);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         const getPlayers = async () => {
@@ -55,12 +55,11 @@ export default function PlayerRankings() {
                         {players.map((player, index) => (
                             <tr key={player.id}>
                                 <td>{index + 1}</td>
-                                <td
-                                    className={styles.playerCell}
-                                    onClick={() => setIsModalOpen(true)}
-                                >
+                                <td className={styles.playerCell}>
                                     <img src={player.image} className={styles.playerImage} alt="Player Profile" />
-                                    <p className={styles.playerName}>{player.name}</p>
+                                    <p
+                                        onClick={() => navigate(`/players/rankings/${player.name}`)}
+                                        className={styles.playerName}>{player.name}</p>
                                 </td>
                                 <td>{player.age}</td>
                                 <td>{player.points}</td>
@@ -70,12 +69,12 @@ export default function PlayerRankings() {
 
                 </table>
                 <h1>Sample king</h1>
-                <PlayerProfileModal
+                {/* <PlayerProfileModal
                     isOpen={isModalOpen}
                     onClose={() => setIsModalOpen(false)}
                     playerName="Sample King"
                     stats={{ level: 99, rank: "Champion" }}
-                />
+                /> */}
             </section>
         </div>
     )

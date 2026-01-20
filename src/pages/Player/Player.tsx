@@ -1,4 +1,4 @@
-import React from 'react';
+import { useLoaderData, useNavigate } from "react-router";
 import styles from './Player.module.css';
 
 interface PlayerStats {
@@ -9,42 +9,49 @@ interface PlayerStats {
     favoriteShot: string;
 }
 
-interface PlayerProps {
+interface PlayerData {
+    id: number;
     name: string;
     avatar: string;
     location: string;
     stats: PlayerStats;
-    onClose: () => void;
 }
 
-const Player: React.FC<PlayerProps> = ({ name, avatar, location, stats, onClose }) => {
+export default function Player() {
+    const player = useLoaderData() as PlayerData;
+    const navigate = useNavigate();
+
+    const handleClose = () => {
+        navigate("/players/rankings");
+    };
+
     return (
-        <div className={styles.overlay} onClick={onClose}>
-            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-                <button className={styles.closeBtn} onClick={onClose}>&times;</button>
+        <div className={styles.overlay}>
+            <div className={styles.modal}>
+                <button className={styles.closeBtn} onClick={handleClose}>&times;</button>
 
                 {/* Header Section */}
                 <div className={styles.header}>
-                    <img src={avatar} alt={name} className={styles.avatar} />
+                    <img src={player.avatar} alt={player.name} className={styles.avatar} />
                     <div className={styles.headerText}>
-                        <h2>{name}</h2>
-                        <p className={styles.location}>{location}</p>
-                        <span className={styles.badge}>DUPR {stats.skillLevel}</span>
+                        <h2>{player.name}</h2>
+                        <p className={styles.location}>{player.location}</p>
+                        <span className={styles.badge}>DUPR {player.stats.skillLevel}</span>
                     </div>
                 </div>
 
                 {/* Stats Grid */}
                 <div className={styles.statsGrid}>
                     <div className={styles.statItem}>
-                        <span className={styles.statValue}>{stats.winRate}%</span>
+                        <span className={styles.statValue}>{player.stats.winRate}%</span>
                         <span className={styles.statLabel}>Win Rate</span>
                     </div>
                     <div className={styles.statItem}>
-                        <span className={styles.statValue}>{stats.wins}</span>
+                        <span className={styles.statValue}>{player.stats.wins}</span>
                         <span className={styles.statLabel}>Wins</span>
                     </div>
                     <div className={styles.statItem}>
-                        <span className={styles.statValue}>{stats.losses}</span>
+                        <span className={styles.statValue}>{player.stats.losses}</span>
                         <span className={styles.statLabel}>Losses</span>
                     </div>
                 </div>
@@ -52,7 +59,7 @@ const Player: React.FC<PlayerProps> = ({ name, avatar, location, stats, onClose 
                 {/* Details Section */}
                 <div className={styles.details}>
                     <div className={styles.detailRow}>
-                        <strong>Favorite Shot:</strong> <span>{stats.favoriteShot}</span>
+                        <strong>Favorite Shot:</strong> <span>{player.stats.favoriteShot}</span>
                     </div>
                     <div className={styles.detailRow}>
                         <strong>Preferred Side:</strong> <span>Right (Even)</span>
@@ -64,6 +71,4 @@ const Player: React.FC<PlayerProps> = ({ name, avatar, location, stats, onClose 
             </div>
         </div>
     );
-};
-
-export default Player;
+}

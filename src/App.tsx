@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: "rankings/:id",
         loader: playerLoader,
-        // Component: Player
+        Component: Player
       }
     ]
   }
