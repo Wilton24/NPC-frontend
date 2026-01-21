@@ -1,130 +1,112 @@
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    backdrop-filter: blur(4px);
-}
-
-.modal {
-    background: #ffffff;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 20px;
+.page {
+    min-height: 100vh;
     padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: #f4f6f8;
 }
 
-.closeBtn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+.backBtn {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    color: #0070f3;
+    font-size: 0.95rem;
     cursor: pointer;
-    color: #333;
+    margin-bottom: 1rem;
+}
+
+.card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .header {
     display: flex;
-    align-items: center;
     gap: 1.5rem;
+    align-items: center;
     margin-bottom: 2rem;
 }
 
 .avatar {
-    width: 80px;
-    height: 80px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #ccff00;
-    /* Electric Lime */
+    border: 4px solid #0070f3;
 }
 
-.headerText h2 {
+.name {
     margin: 0;
-    font-size: 1.5rem;
-    color: #001f3f;
-    /* Navy */
+    font-size: 1.8rem;
 }
 
-.location {
-    margin: 0;
+.meta {
     color: #666;
-    font-size: 0.9rem;
+    margin: 0.25rem 0;
 }
 
-.badge {
+.rank {
     display: inline-block;
-    background: #001f3f;
-    color: #ccff00;
-    padding: 4px 10px;
-    border-radius: 5px;
-    font-weight: bold;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.7rem;
+    background: #0070f3;
+    color: #fff;
+    border-radius: 999px;
     font-size: 0.8rem;
-    margin-top: 8px;
 }
 
-.statsGrid {
+.stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    background: #f8f9fa;
-    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.statBox {
+    background: #f9fafb;
     border-radius: 12px;
+    padding: 1rem;
     text-align: center;
-    margin-bottom: 1.5rem;
 }
 
 .statValue {
+    font-size: 1.4rem;
+    font-weight: bold;
     display: block;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #001f3f;
 }
 
 .statLabel {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: #888;
-    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    color: #777;
 }
 
 .details {
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .detailRow {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 0.75rem;
     font-size: 0.95rem;
 }
 
 .challengeBtn {
     width: 100%;
-    background: #ccff00;
-    color: #001f3f;
+    padding: 0.9rem;
+    background: #0070f3;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
+    color: white;
     font-size: 1rem;
+    border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .challengeBtn:hover {
-    transform: translateY(-2px);
-    background: #b8e600;
+    background: #0059c1;
 }
