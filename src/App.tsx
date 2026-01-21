@@ -6,6 +6,8 @@ import PlayersHome from './pages/PlayerRankings/PlayersHome';
 import { playerLoader } from './loaders/playerLoader';
 import Player from './pages/Player/Player';
 import PlayerError from './pages/Player/PlayerError';
+import Login from './auth/Login';
+import ProtectedRoute from './auth/ProtectedRoute';
 
 
 const router = createBrowserRouter([
@@ -16,30 +18,33 @@ const router = createBrowserRouter([
       { index: true }],
   },
   {
-    path: "players/",
-    Component: PlayersHome,
+    path: "/login",
+    Component: Login,
+  },
+  {
+    element: <ProtectedRoute />,
     children: [
-      { index: true },
-      { path: "rankings", Component: PlayerRankings },
       {
-        path: "rankings/:id",
-        loader: playerLoader,
-        Component: Player,
-        errorElement: <PlayerError />
+        path: "players/",
+        Component: PlayersHome,
+        children: [
+          { index: true },
+          { path: "rankings", Component: PlayerRankings },
+          {
+            path: "rankings/:id",
+            loader: playerLoader,
+            Component: Player,
+            errorElement: <PlayerError />
+          }
+        ]
       }
     ]
   }
 ]);
 
-
-
-
-
 function App() {
 
   return <RouterProvider router={router} />;
-
-
 }
 
 export default App

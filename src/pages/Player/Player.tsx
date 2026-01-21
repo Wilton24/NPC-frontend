@@ -13,7 +13,6 @@ export default function Player() {
     const player = useLoaderData() as PlayerData;
     const navigate = useNavigate();
 
-    // Derived / extra data (frontend-only for now)
     const skillLevel = (player.points / 1000).toFixed(2);
     const winRate = `${Math.min(90, 50 + Math.floor(player.points / 100))}%`;
     const favoriteShot = "Cross-court dink";
