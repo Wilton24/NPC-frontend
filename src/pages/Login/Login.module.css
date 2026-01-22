@@ -1,0 +1,96 @@
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.inputGroup label {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+    color: #444;
+}
+
+.inputGroup input {
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: #2c5364;
+}
+
+.loginBtn {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #2c5364;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.loginBtn:hover {
+    background: #203a43;
+}
+
+.error {
+    background: #ffe5e5;
+    color: #b00020;
+    padding: 0.6rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.registerText {
+    margin-top: 1.2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.registerLink {
+    color: #2c5364;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.registerLink:hover {
+    text-decoration: underline;
+}

@@ -24,8 +24,8 @@ export default function Header() {
             </nav>
 
             <div className={styles.right}>
-                <NavLink to="/join" className={styles.cta}>
-                    Join Now
+                <NavLink to="/login" className={styles.cta}>
+                    Logout
                 </NavLink>
             </div>
         </header>

@@ -6,8 +6,8 @@ import PlayersHome from './pages/PlayerRankings/PlayersHome';
 import { playerLoader } from './loaders/playerLoader';
 import Player from './pages/Player/Player';
 import PlayerError from './pages/Player/PlayerError';
-import Login from './auth/Login';
 import ProtectedRoute from './auth/ProtectedRoute';
+import Login from './pages/Login/Login';
 
 
 const router = createBrowserRouter([
