@@ -44,8 +44,6 @@ export default function Login() {
             const data = await res.json();
 
             login(data.token);
-            console.log("TOKENSKIE", data.token);
-
             navigate("/players/rankings");
         } catch {
             setError("Something went wrong. Please try again.");

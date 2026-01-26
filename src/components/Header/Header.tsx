@@ -2,8 +2,20 @@ import { NavLink } from "react-router";
 import styles from "./Header.module.css";
 import NavItem from "./NavItem";
 import logo from "../../assets/pickleball-logo.jpg";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router";
+
 
 export default function Header() {
+
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+
+    function logOutFn() {
+        logout();
+        navigate("/login");
+    }
+
     return (
         <header className={styles.header}>
             <div className={styles.left}>
@@ -24,9 +36,9 @@ export default function Header() {
             </nav>
 
             <div className={styles.right}>
-                <NavLink to="/login" className={styles.cta}>
+                <button onClick={logOutFn} className={styles.cta}>
                     Logout
-                </NavLink>
+                </button>
             </div>
         </header>
     );
