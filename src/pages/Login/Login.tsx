@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import { useAuth } from "../../context/AuthContext";
+import { api } from "../../api/api";
 import styles from "./Login.module.css";
-
-
 
 export default function Login() {
     const { login } = useAuth();
@@ -12,12 +11,12 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError("");
 
-        // Frontend-only validation (temporary)
         if (!email || !password) {
             setError("Please fill in all fields");
             return;
@@ -28,9 +27,31 @@ export default function Login() {
             return;
         }
 
-        // Mock login success
-        login();
-        navigate("/players/rankings");
+        try {
+            setLoading(true);
+
+            const res = await api("/api/auth/login", {
+                method: "POST",
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                setError(data.message || "Invalid email or password");
+                return;
+            }
+
+            const data = await res.json();
+
+            login(data.token);
+            console.log("TOKENSKIE", data.token);
+
+            navigate("/players/rankings");
+        } catch {
+            setError("Something went wrong. Please try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -51,6 +72,7 @@ export default function Login() {
                         placeholder="you@example.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        disabled={loading}
                     />
                 </div>
 
@@ -62,11 +84,16 @@ export default function Login() {
                         placeholder="••••••••"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        disabled={loading}
                     />
                 </div>
 
-                <button type="submit" className={styles.loginBtn}>
-                    Login
+                <button
+                    type="submit"
+                    className={styles.loginBtn}
+                    disabled={loading}
+                >
+                    {loading ? "Logging in..." : "Login"}
                 </button>
 
                 <p className={styles.registerText}>
