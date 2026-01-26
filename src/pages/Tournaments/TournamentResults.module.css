@@ -1,0 +1,98 @@
+.page {
+    padding: 4rem 6rem;
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #050053;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* List */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Card */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.cardHeader h2 {
+    color: #050053;
+    font-size: 1.4rem;
+}
+
+.cardHeader span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+
+.table td {
+    padding: 0.8rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #eee;
+}
+
+.place {
+    width: 60px;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page {
+        padding: 3rem 1.5rem;
+    }
+
+    .cardHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+}
