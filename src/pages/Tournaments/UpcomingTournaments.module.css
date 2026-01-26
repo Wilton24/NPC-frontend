@@ -1,0 +1,90 @@
+.page {
+    padding: 4rem 6rem;
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #050053;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Card */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    color: #050053;
+    margin-bottom: 1rem;
+}
+
+/* Meta info */
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* Button */
+.cta {
+    align-self: flex-start;
+    padding: 0.6rem 1.4rem;
+    background: linear-gradient(90deg, #00ffcc, #00cfa6);
+    color: #050053;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 255, 204, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page {
+        padding: 3rem 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+}

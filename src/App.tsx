@@ -8,6 +8,8 @@ import Player from './pages/Player/Player';
 import PlayerError from './pages/Player/PlayerError';
 import ProtectedRoute from './auth/ProtectedRoute';
 import Login from './pages/Login/Login';
+import UpcomingTournaments from './pages/Tournaments/UpcomingTournaments';
+import TournamentsLayout from './pages/Tournaments/TournamentsLayout';
 
 
 const router = createBrowserRouter([
@@ -20,6 +22,13 @@ const router = createBrowserRouter([
   {
     path: "/login",
     Component: Login,
+  },
+  {
+    path: "/tournaments",
+    Component: TournamentsLayout,
+    children: [
+      { path: "upcoming", Component: UpcomingTournaments },
+    ],
   },
   {
     element: <ProtectedRoute />,
