@@ -31,7 +31,7 @@ export default function Header() {
                     <NavItem title="Membership" links={["Pricing", "Benefits"]} />
                     <NavItem title="Courts" links={["Availability", "Book Now"]} />
                     <NavItem title="Players" links={["Rankings", "Profiles"]} />
-                    <NavItem title="Tournaments" links={["Upcoming", "Results"]} />
+                    <NavItem title="Tournaments" links={["Upcoming", "Results", "Draws"]} />
                 </ul>
             </nav>
 
