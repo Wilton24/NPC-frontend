@@ -11,6 +11,7 @@ import Login from './pages/Login/Login';
 import UpcomingTournaments from './pages/Tournaments/UpcomingTournaments';
 import TournamentsLayout from './pages/Tournaments/TournamentsLayout';
 import TournamentResults from './pages/Tournaments/TournamentResults';
+import TournamentBracket from './components/Draw/TournamentBracket';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
     children: [
       { path: "upcoming", Component: UpcomingTournaments },
       { path: "results", Component: TournamentResults },
+      { path: "draws", Component: TournamentBracket },
     ],
   },
   {
