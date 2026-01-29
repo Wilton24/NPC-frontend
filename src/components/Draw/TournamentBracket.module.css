@@ -1,46 +1,78 @@
 .page {
     padding: 4rem 2rem;
-    background: #f5f7fb;
     min-height: 100vh;
+    background: #f5f7fb;
 }
 
 .title {
     text-align: center;
+    font-size: 2.4rem;
     margin-bottom: 3rem;
-    font-size: 2.2rem;
     color: #050053;
 }
 
 /* Bracket layout */
 .bracket {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
     overflow-x: auto;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
+/* Round column */
 .round {
-    min-width: 220px;
+    min-width: 240px;
 }
 
-.round h2 {
+.roundTitle {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 1.1rem;
     color: #333;
 }
 
-/* Match card */
-.match {
-    background: #fff;
-    border-radius: 12px;
-    padding: 0.8rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+/* Match wrapper for connectors */
+.matchWrapper {
     position: relative;
+    margin-bottom: 3rem;
 }
 
-/* Players */
+/* Horizontal connector */
+.matchWrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    width: 2rem;
+    height: 2px;
+    background: #c5c5c5;
+}
+
+/* Vertical connector */
+.matchWrapper::before {
+    content: "";
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    width: 2px;
+    height: 3rem;
+    background: #c5c5c5;
+}
+
+/* Prevent dangling vertical line */
+.matchWrapper:last-child::before {
+    display: none;
+}
+
+/* Match card */
+.match {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 0.8rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Player rows */
 .player {
     display: flex;
     justify-content: space-between;
@@ -53,14 +85,16 @@
     margin-bottom: 0.3rem;
 }
 
+/* Winner highlight */
 .winner {
     background: #00ffcc;
     font-weight: 700;
+    color: #050053;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .bracket {
-        gap: 2rem;
+        gap: 2.5rem;
     }
 }
