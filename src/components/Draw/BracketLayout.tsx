@@ -1,42 +1,65 @@
+import { useEffect, useRef, useState } from "react";
 import BracketTest from "./BracketTest";
 import styles from "./BracketLayout.module.css";
 
-export default function BracketLayout() {
-    return (
-        <div className={styles.bracketWrapper}>
-            {/* SVG CONNECTORS */}
-            <svg
-                className={styles.svg}
-                viewBox="0 0 1000 600"
-                preserveAspectRatio="none"
-            >
-                {/* QF → SF */}
-                <line x1="253" y1="42" x2="270" y2="42" />
-                <line x1="253" y1="78" x2="270" y2="78" />
+type Line = {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+};
 
-                <line x1="270" x2="270" y1="42" y2="78" />
+export default function BracketLayout() {
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const topRowRef = useRef<HTMLDivElement>(null);
+    const bottomRowRef = useRef<HTMLDivElement>(null);
+
+    const [lines, setLines] = useState<Line[]>([]);
+
+    useEffect(() => {
+        function calculateLines() {
+            if (!wrapperRef.current || !topRowRef.current || !bottomRowRef.current) return;
+
+            const wrapperRect = wrapperRef.current.getBoundingClientRect();
+            const topRect = topRowRef.current.getBoundingClientRect();
+            const bottomRect = bottomRowRef.current.getBoundingClientRect();
+
+            const startX = topRect.right - wrapperRect.left;
+            const topY = topRect.top + topRect.height / 2 - wrapperRect.top;
+            const bottomY = bottomRect.top + bottomRect.height / 2 - wrapperRect.top;
+            const midX = startX + 20;
+
+            setLines([
+                // top horizontal
+                { x1: startX, y1: topY, x2: midX, y2: topY },
+                // bottom horizontal
+                { x1: startX, y1: bottomY, x2: midX, y2: bottomY },
+                // vertical connector
+                { x1: midX, y1: topY, x2: midX, y2: bottomY },
+            ]);
+        }
+
+        calculateLines();
+        window.addEventListener("resize", calculateLines);
+        return () => window.removeEventListener("resize", calculateLines);
+    }, []);
+
+    return (
+        <div ref={wrapperRef} className={styles.bracketWrapper}>
+            <svg className={styles.svg}>
+                {lines.map((line, i) => (
+                    <line key={i} {...line} />
+                ))}
             </svg>
 
-            {/* QUARTERFINALS */}
             <div className={styles.round}>
                 <h3>Quarterfinals</h3>
-                <BracketTest />
-                <BracketTest />
-                <BracketTest />
-                <BracketTest />
+
+                <BracketTest
+                    topRowRef={topRowRef}
+                    bottomRowRef={bottomRowRef}
+                />
             </div>
-
-
-            {/* <div className={styles.round}>
-                <h3>Semifinals</h3>
-                <BracketTest />
-                <BracketTest />
-            </div>
-
-            <div className={styles.round}>
-                <h3>Final</h3>
-                <BracketTest />
-            </div> */}
         </div>
     );
 }
