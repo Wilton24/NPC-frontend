@@ -11,16 +11,9 @@ export default function BracketLayout() {
                 preserveAspectRatio="none"
             >
                 {/* QF → SF */}
-                <line x1="333" y1="42" x2="350" y2="200" />
                 <line x1="333" y1="42" x2="350" y2="42" />
+                {/* <line x1="333" y1="42" x2="350" y2="200" /> */}
                 {/* <line x1="550" y1="300" x2="450" y2="200" /> */}
-
-                {/* <line x1="250" y1="500" x2="450" y2="400" />
-                <line x1="250" y1="700" x2="450" y2="400" /> */}
-
-                {/* SF → Final */}
-                {/* <line x1="650" y1="200" x2="850" y2="300" />
-                <line x1="650" y1="400" x2="850" y2="300" /> */}
             </svg>
 
             {/* QUARTERFINALS */}
