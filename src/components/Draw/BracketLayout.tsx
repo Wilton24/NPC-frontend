@@ -11,9 +11,10 @@ export default function BracketLayout() {
                 preserveAspectRatio="none"
             >
                 {/* QF → SF */}
-                <line x1="333" y1="42" x2="350" y2="42" />
-                {/* <line x1="333" y1="42" x2="350" y2="200" /> */}
-                {/* <line x1="550" y1="300" x2="450" y2="200" /> */}
+                <line x1="253" y1="42" x2="270" y2="42" />
+                <line x1="253" y1="78" x2="270" y2="78" />
+
+                <line x1="270" x2="270" y1="42" y2="78" />
             </svg>
 
             {/* QUARTERFINALS */}
@@ -25,18 +26,17 @@ export default function BracketLayout() {
                 <BracketTest />
             </div>
 
-            {/* SEMIFINALS */}
-            <div className={styles.round}>
+
+            {/* <div className={styles.round}>
                 <h3>Semifinals</h3>
                 <BracketTest />
                 <BracketTest />
             </div>
 
-            {/* FINAL */}
             <div className={styles.round}>
                 <h3>Final</h3>
                 <BracketTest />
-            </div>
+            </div> */}
         </div>
     );
 }
