@@ -1,0 +1,27 @@
+# Dependency directory
+node_modules
+
+# Build output
+dist
+build
+
+# Version control
+.git
+.gitignore
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+
+# Docker files (you don't need the recipe inside the cake!)
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# OS files
+.DS_Store
