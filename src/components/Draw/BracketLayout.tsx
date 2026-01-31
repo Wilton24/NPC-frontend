@@ -1,0 +1,42 @@
+import BracketTest from "./BracketTest";
+import styles from "./BracketLayout.module.css";
+
+export default function BracketLayout() {
+    return (
+        <div className={styles.bracketWrapper}>
+            {/* SVG CONNECTORS */}
+            <svg
+                className={styles.svg}
+                viewBox="0 0 1000 600"
+                preserveAspectRatio="none"
+            >
+                {/* QF → SF */}
+                <line x1="333" y1="42" x2="350" y2="42" />
+                {/* <line x1="333" y1="42" x2="350" y2="200" /> */}
+                {/* <line x1="550" y1="300" x2="450" y2="200" /> */}
+            </svg>
+
+            {/* QUARTERFINALS */}
+            <div className={styles.round}>
+                <h3>Quarterfinals</h3>
+                <BracketTest />
+                <BracketTest />
+                <BracketTest />
+                <BracketTest />
+            </div>
+
+            {/* SEMIFINALS */}
+            <div className={styles.round}>
+                <h3>Semifinals</h3>
+                <BracketTest />
+                <BracketTest />
+            </div>
+
+            {/* FINAL */}
+            <div className={styles.round}>
+                <h3>Final</h3>
+                <BracketTest />
+            </div>
+        </div>
+    );
+}

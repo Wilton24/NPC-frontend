@@ -1,0 +1,22 @@
+.scoreRowPlayersWrapper {
+    width: 400px;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    margin: 2rem 1rem;
+}
+
+.playerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0rem 1rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.scoreWrapper {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    padding-right: 0.5rem;
+}
