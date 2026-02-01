@@ -23,7 +23,8 @@ export default function PlayerRankings() {
     useEffect(() => {
         const getPlayers = async () => {
             try {
-                const data = await fetchApi<Player[]>("http://localhost:3001/api/players");
+                // const data = await fetchApi<Player[]>("http://localhost:3001/api/players");
+                const data = await fetchApi<Player[]>(`${import.meta.env.VITE_API_URL}/api/players`);
                 setPlayers(data);
             } catch (error) {
                 console.error("Failed to fetch players:", error);
