@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./player-rankings.module.css";
 import { fetchApi } from "../../api/util";
-// import PlayerProfileModal from "../../components/Modals/PlayerProfile/PlayerProfileModal";
 import { useNavigate } from "react-router";
 
 
