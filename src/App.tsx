@@ -14,7 +14,10 @@ import TournamentResults from './pages/Tournaments/TournamentResults';
 // import TournamentBracket from './components/Draw/TournamentBracket';
 // import BracketTest from './components/Draw/BracketTest';
 import BracketLayout from './components/Draw/BracketLayout';
+import Register from './pages/Registration/Register';
 
+
+console.log("API URL:", import.meta.env.VITE_API_URL);
 
 const router = createBrowserRouter([
   {
@@ -26,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     Component: Login,
+  },
+  {
+    path: "/register",
+    Component: Register,
   },
   {
     path: "/tournaments",

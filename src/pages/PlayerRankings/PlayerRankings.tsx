@@ -69,12 +69,6 @@ export default function PlayerRankings() {
 
                 </table>
                 <h1>Sample king</h1>
-                {/* <PlayerProfileModal
-                    isOpen={isModalOpen}
-                    onClose={() => setIsModalOpen(false)}
-                    playerName="Sample King"
-                    stats={{ level: 99, rank: "Champion" }}
-                /> */}
             </section>
         </div>
     )

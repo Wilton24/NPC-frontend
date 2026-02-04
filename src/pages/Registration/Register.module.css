@@ -1,0 +1,80 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f8;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card h1 {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.subtitle {
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #666;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.field label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.field input {
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.field input:focus {
+    border-color: #2563eb;
+}
+
+.button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.button:hover {
+    background: #1e4fd6;
+}
+
+.footerText {
+    margin-top: 16px;
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+}
+
+.footerText span {
+    color: #2563eb;
+    cursor: pointer;
+    font-weight: 500;
+}
