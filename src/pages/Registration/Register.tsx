@@ -23,69 +23,73 @@ export default function Register() {
         }
 
         console.log("Registration data:", formData);
-        // TODO: send to backend
     }
 
     return (
         <div className={styles.page}>
-            <form className={styles.card} onSubmit={handleSubmit}>
-                <h1>Create Account</h1>
-                <p className={styles.subtitle}>
-                    Register to access tournaments and rankings
+            <div className={styles.card}>
+                <div className={styles.header}>
+                    <div className={styles.icon}>🏓</div>
+                    <h1>Join the Tournament</h1>
+                    <p>Create your pickleball player account</p>
+                </div>
+
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.field}>
+                        <label>Full Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Juan Dela Cruz"
+                            required
+                        />
+                    </div>
+
+                    <div className={styles.field}>
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="juan@email.com"
+                            required
+                        />
+                    </div>
+
+                    <div className={styles.field}>
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className={styles.field}>
+                        <label>Confirm Password</label>
+                        <input
+                            type="password"
+                            name="confirmPassword"
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <button className={styles.button} type="submit">
+                        Create Account
+                    </button>
+                </form>
+
+                <p className={styles.footer}>
+                    Already registered? <span>Login</span>
                 </p>
-
-                <div className={styles.field}>
-                    <label>Name</label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                <div className={styles.field}>
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                <div className={styles.field}>
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                <div className={styles.field}>
-                    <label>Confirm Password</label>
-                    <input
-                        type="password"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                <button type="submit" className={styles.button}>
-                    Register
-                </button>
-
-                <p className={styles.footerText}>
-                    Already have an account? <span>Login</span>
-                </p>
-            </form>
+            </div>
         </div>
     );
 }

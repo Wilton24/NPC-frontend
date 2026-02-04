@@ -3,78 +3,116 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f4f6f8;
+    background:
+        linear-gradient(135deg, #0f172a 0%, #14532d 100%);
 }
 
 .card {
     width: 100%;
-    max-width: 420px;
+    max-width: 460px;
     background: #ffffff;
+    border-radius: 16px;
     padding: 32px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
 }
 
-.card h1 {
+/* Pickleball court stripe */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg,
+            #22c55e,
+            #84cc16,
+            #22c55e);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.icon {
+    font-size: 42px;
     margin-bottom: 8px;
-    font-size: 24px;
 }
 
-.subtitle {
-    margin-bottom: 24px;
+.header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.header p {
     font-size: 14px;
-    color: #666;
+    color: #555;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .field {
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
 }
 
 .field label {
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
     margin-bottom: 6px;
-    color: #333;
+    color: #1f2937;
 }
 
 .field input {
-    padding: 10px 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
     font-size: 14px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
     outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
 }
 
 .field input:focus {
-    border-color: #2563eb;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
 }
 
 .button {
-    width: 100%;
-    padding: 12px;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 10px;
     border: none;
-    border-radius: 6px;
-    background: #2563eb;
-    color: #fff;
+    background: linear-gradient(135deg,
+            #22c55e,
+            #16a34a);
+    color: white;
     font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .button:hover {
-    background: #1e4fd6;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
 }
 
-.footerText {
-    margin-top: 16px;
-    font-size: 14px;
+.footer {
+    margin-top: 18px;
     text-align: center;
+    font-size: 14px;
     color: #555;
 }
 
-.footerText span {
-    color: #2563eb;
+.footer span {
+    color: #16a34a;
+    font-weight: 600;
     cursor: pointer;
-    font-weight: 500;
 }
